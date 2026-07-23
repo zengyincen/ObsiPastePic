@@ -18,9 +18,9 @@
       <stop stop-color="#5AC8FA"/>
       <stop offset="1" stop-color="#0A84FF"/>
     </linearGradient>
-    <filter id="outer-shadow" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="32" stdDeviation="42" flood-color="#142A70" flood-opacity="0.34"/>
-    </filter>
+    <clipPath id="icon-clip">
+      <rect x="32" y="32" width="960" height="960" rx="224"/>
+    </clipPath>
     <filter id="paper-shadow" x="-30%" y="-20%" width="160%" height="170%">
       <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#083A8C" flood-opacity="0.24"/>
     </filter>
@@ -29,13 +29,12 @@
     </filter>
   </defs>
 
-  <g filter="url(#outer-shadow)">
+  <g clip-path="url(#icon-clip)">
     <rect x="32" y="32" width="960" height="960" rx="224" fill="url(#app-bg)"/>
     <rect x="45" y="45" width="934" height="934" rx="211" stroke="white" stroke-opacity="0.25" stroke-width="2"/>
-  </g>
 
-  <ellipse cx="238" cy="188" rx="224" ry="196" fill="white" fill-opacity="0.13"/>
-  <ellipse cx="830" cy="836" rx="300" ry="264" fill="#844DFF" fill-opacity="0.2"/>
+    <ellipse cx="238" cy="188" rx="224" ry="196" fill="white" fill-opacity="0.13"/>
+    <ellipse cx="830" cy="836" rx="300" ry="264" fill="#844DFF" fill-opacity="0.2"/>
 
   <g filter="url(#paper-shadow)">
     <rect x="248" y="188" width="528" height="648" rx="96" fill="url(#paper)"/>
@@ -57,5 +56,6 @@
   <rect x="326" y="488" width="372" height="260" rx="54" stroke="white" stroke-opacity="0.62" stroke-width="4"/>
 
   <path d="M206 324C170 402 160 491 178 576" stroke="white" stroke-opacity="0.18" stroke-width="18" stroke-linecap="round"/>
-  <path d="M818 680C854 620 868 550 858 484" stroke="white" stroke-opacity="0.16" stroke-width="18" stroke-linecap="round"/>
+    <path d="M818 680C854 620 868 550 858 484" stroke="white" stroke-opacity="0.16" stroke-width="18" stroke-linecap="round"/>
+  </g>
 </svg>

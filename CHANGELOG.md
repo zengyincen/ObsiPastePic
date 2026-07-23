@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.2 — 2026-07-23
+
+- Clip all icon artwork to the rounded app-icon boundary, removing the bottom-right color spill.
+- Use the same full brand-icon artwork in the standalone icon, banner, and hero assets.
+
 ## 0.4.1 — 2026-07-23
 
 - Register a custom ObsiPastePic ribbon icon that opens the plugin settings.
