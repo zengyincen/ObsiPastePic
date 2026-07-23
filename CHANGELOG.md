@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.3 — 2026-07-23
+
+- Change the manifest display name to **PastePic** to comply with the Obsidian community-directory rule that prohibits variations such as `Obsi-`.
+- Keep the plugin ID `obsipastepic`, installation directory, GitHub repository, and saved settings compatible with previous releases.
+
 ## 0.4.2 — 2026-07-23
 
 - Clip all icon artwork to the rounded app-icon boundary, removing the bottom-right color spill.

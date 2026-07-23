@@ -69,9 +69,11 @@ ObsiPastePic does one thing well: **it catches an image that is pasted, dropped,
    ```
 
 4. Make sure the folder contains `main.js`, `manifest.json`, `styles.css`, and `assets/icon.svg`.
-5. Restart Obsidian and enable **ObsiPastePic** under Settings → Community plugins.
+5. Restart Obsidian and enable **PastePic** under Settings → Community plugins.
 
 > ObsiPastePic has not yet been submitted to the official Obsidian community-plugin directory. GitHub Releases are currently the canonical distribution channel.
+
+> The community-directory display name is **PastePic**. The project brand, GitHub repository, and plugin ID remain **ObsiPastePic** / `obsipastepic` to preserve existing installations and settings.
 
 ### Build from source
 
