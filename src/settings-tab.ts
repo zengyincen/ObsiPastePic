@@ -12,7 +12,7 @@ export class ImageBedUploaderSettingTab extends PluginSettingTab {
   display(): void {
     const { containerEl } = this;
     containerEl.empty();
-    containerEl.createEl("h1", { text: "Image Bed Uploader" });
+    containerEl.createEl("h1", { text: "ObsiPastePic" });
 
     new Setting(containerEl)
       .setName("粘贴图片时自动上传")

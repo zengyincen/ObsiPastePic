@@ -1,97 +1,130 @@
-# Image Bed Uploader
+<p align="right">
+  <a href="./README.md">简体中文</a> · <a href="./README_EN.md">English</a>
+</p>
 
-一个用于 Obsidian 的图片自动上传插件：粘贴或拖入图片后，将图片上传到 GitHub 仓库或自定义图床 API，再把 Markdown 中的占位内容替换成远程图片链接。
+<p align="center">
+  <img src="./assets/banner.svg" alt="ObsiPastePic Banner" width="100%" />
+</p>
 
-## 功能
+<p align="center">
+  <a href="https://github.com/zengyincen/obsidian-image-bed-uploader/releases/latest"><img alt="最新版本" src="https://img.shields.io/github/v/release/zengyincen/obsidian-image-bed-uploader?display_name=tag&sort=semver&style=flat-square&color=0A84FF" /></a>
+  <a href="https://github.com/zengyincen/obsidian-image-bed-uploader/releases"><img alt="下载量" src="https://img.shields.io/github/downloads/zengyincen/obsidian-image-bed-uploader/total?style=flat-square&color=5E5CE6" /></a>
+  <a href="https://github.com/zengyincen/obsidian-image-bed-uploader/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/zengyincen/obsidian-image-bed-uploader?style=flat-square&color=FFB340" /></a>
+  <a href="https://github.com/zengyincen/obsidian-image-bed-uploader/commits/main"><img alt="最后提交" src="https://img.shields.io/github/last-commit/zengyincen/obsidian-image-bed-uploader?style=flat-square&color=30D158" /></a>
+  <a href="https://github.com/zengyincen/obsidian-image-bed-uploader/issues"><img alt="Issues" src="https://img.shields.io/github/issues/zengyincen/obsidian-image-bed-uploader?style=flat-square&color=FF9F0A" /></a>
+  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/github/license/zengyincen/obsidian-image-bed-uploader?style=flat-square&color=8E8E93" /></a>
+</p>
 
-- 粘贴图片自动上传，支持一次粘贴多张图片
-- 可选拖放图片自动上传
-- GitHub Contents API 上传，桌面端与移动端均可使用
-- 通用 `multipart/form-data` 图床接口
-- 自定义 CDN / 反向代理加速链接模板
-- 日期目录、文件名策略、提交信息模板
-- 上传中占位符与失败注释，避免异步上传时替换错位置
-- GitHub 配置只读连接测试
+<p align="center">
+  <strong>粘贴一次，自动上传，立即引用。</strong><br />
+  ObsiPastePic 把粘贴到 Obsidian 的图片上传到 GitHub 仓库或你的图床，并写入可自定义的 CDN / 代理链接。
+</p>
+
+<p align="center">
+  <a href="https://github.com/zengyincen/obsidian-image-bed-uploader/releases/latest"><strong>下载最新版本</strong></a>
+  ·
+  <a href="#30-秒配置-github"><strong>快速开始</strong></a>
+  ·
+  <a href="#cdn--代理链接模板"><strong>CDN 模板</strong></a>
+</p>
+
+<p align="center">
+  <img src="./assets/hero.svg" alt="ObsiPastePic — Paste. Upload. Done." width="100%" />
+</p>
+
+## 为什么是 ObsiPastePic？
+
+截图、网页图片和设计稿经常让 Obsidian 仓库迅速膨胀。手动打开图床、上传、复制链接、再返回笔记，又会打断写作节奏。
+
+ObsiPastePic 只做一件事：**接住你粘贴或拖入的图片，上传，然后在原位置放回远程 Markdown 图片链接。** 上传过程有独立占位符，失败时也会保留错误提示，不会悄悄吞掉笔记内容。
+
+## 功能一览
+
+| 能力 | 说明 |
+| --- | --- |
+| 自动粘贴上传 | 支持一次粘贴多张图片，并在各自占位位置异步替换链接 |
+| 拖放上传 | 可选择在图片拖入 Markdown 编辑器时自动上传 |
+| GitHub 图床 | 使用 GitHub Contents API，支持日期目录、分支和提交信息模板 |
+| 通用图床 API | 支持 `POST multipart/form-data`、自定义请求头、文件字段和附加字段 |
+| CDN / 代理加速 | 完整 URL 模板，不局限于固定 CDN 下拉选项 |
+| 安全的原生回退 | 没有图片、混入非图片文件或配置缺失时，不接管 Obsidian 原生行为 |
+| 桌面与移动端 | 不依赖本地可执行文件，插件清单未限制为桌面端 |
 
 ## 安装
 
-### 直接安装构建产物
+### 从 Release 安装
 
-1. 在 Obsidian 仓库的 `.obsidian/plugins/` 下创建 `image-bed-uploader` 文件夹。
-2. 把 `main.js`、`manifest.json`、`styles.css` 复制进去。
-3. 重启 Obsidian，进入“设置 → 第三方插件”，启用 **Image Bed Uploader**。
+1. 打开 [Latest Release](https://github.com/zengyincen/obsidian-image-bed-uploader/releases/latest)。
+2. 下载 `image-bed-uploader-*.zip`。
+3. 解压到你的 Obsidian 仓库：
+
+   ```text
+   <你的仓库>/.obsidian/plugins/image-bed-uploader/
+   ```
+
+4. 确认文件夹中至少包含 `main.js`、`manifest.json`、`styles.css`。
+5. 重启 Obsidian，在「设置 → 第三方插件」中启用 **ObsiPastePic**。
+
+> 当前尚未提交到 Obsidian 官方社区插件列表，因此请以 GitHub Release 为准。
 
 ### 从源码构建
 
 ```bash
+git clone https://github.com/zengyincen/obsidian-image-bed-uploader.git
+cd obsidian-image-bed-uploader
 npm install
 npm test
 npm run build
 ```
 
-构建后安装所需文件是 `main.js`、`manifest.json` 和 `styles.css`。
+## 30 秒配置 GitHub
 
-## GitHub 配置
+1. 创建或选择一个用于存图的 GitHub 仓库。公开仓库更适合直接配合公共 CDN。
+2. 创建 **Fine-grained personal access token**：
+   - Repository access：只选择图床仓库；
+   - Repository permissions → Contents：选择 **Read and write**；
+   - 不授予无关权限。
+3. 打开 ObsiPastePic 设置，选择「GitHub 仓库」。
+4. 填写仓库所有者、仓库名、分支和 Token。
+5. 点击「测试 GitHub 配置」，再粘贴一张图片。
 
-1. 新建或选择一个用于存图的 GitHub 仓库。公开仓库最适合直接配合公共 CDN。
-2. 创建 Fine-grained personal access token：
-   - Repository access 只选择该图床仓库；
-   - Repository permissions → Contents 设置为 **Read and write**；
-   - 不要授予无关权限。
-3. 在插件设置中填写仓库所有者、仓库名、分支和 Token。
-4. 点击“测试 GitHub 配置”。
-5. 粘贴一张图片验证上传。
+### 路径与文件名
 
-Token 会以明文保存在 Obsidian 插件目录的 `data.json`。请使用只绑定一个仓库、权限最小且可随时撤销的 Token，不要复用高权限 Token。
-
-### 仓库路径变量
-
-“仓库内路径”支持：
-
-- `{year}`、`{month}`、`{day}`
-- `{hour}`、`{minute}`、`{second}`
-- `{timestamp}`
-
-默认值 `images/{year}/{month}` 会生成类似 `images/2026/07/文件名.png` 的路径。
-
-### CDN / 代理模板
-
-GitHub 模式支持以下变量：
-
-- `{owner}`：仓库所有者
-- `{repo}`：仓库名
-- `{branch}`：分支
-- `{path}`：逐段 URL 编码后的文件路径
-- `{encodedPath}`：整条路径编码后的值
-- `{rawUrl}`：完整 GitHub Raw URL
-- `{encodedRawUrl}`：编码后的完整 Raw URL
-
-常用模板：
+默认仓库路径为：
 
 ```text
-# GitHub Raw（默认）
-https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path}
-
-# jsDelivr
-https://cdn.jsdelivr.net/gh/{owner}/{repo}@{branch}/{path}
-
-# Statically
-https://cdn.statically.io/gh/{owner}/{repo}/{branch}/{path}
-
-# 自建代理，在 Raw URL 前加前缀
-https://image-proxy.example.com/{rawUrl}
-
-# 需要把源 URL 当作查询参数的代理
-https://image-proxy.example.com/fetch?url={encodedRawUrl}
+images/{year}/{month}
 ```
 
-设置页会实时显示示例预览。自建代理的路由格式不同，按代理服务实际要求调整模板即可。
+可用日期变量：`{year}`、`{month}`、`{day}`、`{hour}`、`{minute}`、`{second}`、`{timestamp}`。
 
-> 私有 GitHub 仓库的 Raw/CDN 链接通常无法匿名访问。上传可以成功，但 Obsidian 或网页端未必能显示图片；这种场景需要能为私有仓库鉴权的自建代理，或改用公开图床仓库。
+文件命名支持：
+
+- 时间戳 + 原文件名（默认，最不容易冲突）；
+- 仅时间戳；
+- 保留原文件名。
+
+提交信息还可使用 `{filename}` 和 `{path}`。
+
+## CDN / 代理链接模板
+
+GitHub 模式支持：`{owner}`、`{repo}`、`{branch}`、`{path}`、`{encodedPath}`、`{rawUrl}`、`{encodedRawUrl}`。
+
+| 场景 | 模板 |
+| --- | --- |
+| GitHub Raw（默认） | `https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path}` |
+| jsDelivr | `https://cdn.jsdelivr.net/gh/{owner}/{repo}@{branch}/{path}` |
+| Statically | `https://cdn.statically.io/gh/{owner}/{repo}/{branch}/{path}` |
+| Raw URL 前置代理 | `https://image-proxy.example.com/{rawUrl}` |
+| 查询参数型代理 | `https://image-proxy.example.com/fetch?url={encodedRawUrl}` |
+
+设置页会实时显示示例预览，因此可以直接按自建代理的路由格式调整。
+
+> 私有 GitHub 仓库的 Raw/CDN 链接通常无法匿名读取。上传可以成功，但图片不一定能显示；请使用能够为私有仓库鉴权的自建代理，或改用公开图床仓库。
 
 ## 自定义图床 API
 
-该模式会发送如下请求：
+自定义模式会通过 `POST multipart/form-data` 发送图片：
 
 ```http
 POST /upload
@@ -101,33 +134,75 @@ file=<图片二进制>
 album=obsidian
 ```
 
-设置项说明：
+| 设置 | 示例 |
+| --- | --- |
+| 上传接口 | `https://img.example.com/upload` |
+| 文件字段名 | `file`、`image` 或 `source` |
+| 请求头 JSON | `{"Authorization":"Bearer token"}` |
+| 附加字段 JSON | `{"album":"obsidian"}` |
+| 响应链接路径 | `data.url` 或 `data.images[0].url` |
+| CDN 模板 | `{url}` 或 `https://proxy.example.com/?url={encodedUrl}` |
 
-- **上传接口**：完整 HTTPS URL；
-- **文件字段名**：默认 `file`，按图床 API 改为 `image`、`source` 等；
-- **请求头 JSON**：适合填写 Authorization 或 API Key；
-- **附加表单字段 JSON**：相册、过期时间等普通字段；
-- **响应链接路径**：例如响应 `{ "data": { "url": "..." } }` 时填 `data.url`；数组支持 `data.images[0].url`；
-- **CDN / 代理链接模板**：支持 `{url}`、`{encodedUrl}`、`{filename}`。
+插件不适配需要专用签名算法、分块上传或浏览器交互登录的特殊接口；这类服务需要单独实现上传器。
 
-如果 API 直接返回 JSON 字符串 URL，可把“响应链接路径”留空。插件不适配签名算法、分块上传或必须由浏览器表单执行的特殊接口，这类服务需要增加专用上传器。
-
-## 粘贴行为
+## 粘贴行为与失败处理
 
 - 剪贴板没有图片时，插件不干预 Obsidian。
-- 剪贴板里的文件不全是图片时，插件不干预，避免丢失附件。
-- 配置缺失时不会阻止原生粘贴。
-- 上传开始后会插入唯一占位符；成功后替换为 `![文件名](<远程地址>)`。
-- 上传失败时占位符会替换成 HTML 注释，并显示通知；图片仍保留在系统剪贴板时可再次粘贴。
+- 剪贴板文件不全是图片时，插件不接管，避免丢失附件。
+- 配置缺失时保留 Obsidian 原生粘贴行为。
+- 上传开始后插入唯一占位符，成功后替换为 `![文件名](<远程地址>)`。
+- 上传失败后写入 HTML 注释并显示通知，方便定位问题并重新粘贴。
+- 可决定剪贴板同时含图片与文字时是否仍上传图片。
 
-如果从 Excel、浏览器等应用复制内容时同时出现图片和文字，可用“图片与文字共存时仍上传”开关决定由插件还是 Obsidian 处理。
+## 安全说明
 
-## 参考项目
+- GitHub Token 会明文保存在插件目录的 `data.json` 中；请务必使用**单仓库、最小权限、可随时撤销**的 Token。
+- 不要在截图、Issue、日志或公开笔记中暴露 Token 和自定义图床请求头。
+- GitHub 与公共 CDN 都有服务条款和流量限制。个人笔记图片通常没有问题，但不应把它们当作无限制对象存储。
 
-本插件在事件处理、上传抽象和 GitHub/CDN 配置方面参考了：
+## 开发与验证
 
-- [gavvvr/obsidian-imgur-plugin](https://github.com/gavvvr/obsidian-imgur-plugin)
-- [yaleiyale/obsidian-emo-uploader](https://github.com/yaleiyale/obsidian-emo-uploader)
-- [renmu123/obsidian-image-auto-upload-plugin](https://github.com/renmu123/obsidian-image-auto-upload-plugin)
+```bash
+npm run typecheck   # TypeScript 类型检查
+npm test            # Vitest 单元测试
+npm run build       # 生成 main.js
+```
 
-实现代码为独立编写，采用 MIT License。
+当前测试覆盖模板替换、路径编码、文件命名、JSON 响应路径和配置迁移。
+
+## 品牌素材
+
+| 素材 | 文件 | 用途 |
+| --- | --- | --- |
+| App Icon | [`assets/icon.svg`](./assets/icon.svg) | 头像、应用图标、小尺寸标识 |
+| Banner | [`assets/banner.svg`](./assets/banner.svg) | GitHub 头图、社交分享横幅 |
+| Hero | [`assets/hero.svg`](./assets/hero.svg) | README 与产品介绍主视觉 |
+
+视觉采用克制渐变、玻璃层次与大留白的现代系统设计语言；不包含 Apple 商标或官方素材。
+
+## 致谢
+
+ObsiPastePic 是独立实现的 MIT 开源项目。以下项目为事件处理、上传抽象、GitHub 图床与用户体验提供了重要参考：
+
+### 直接参考
+
+- [gavvvr/obsidian-imgur-plugin](https://github.com/gavvvr/obsidian-imgur-plugin) — 图片粘贴事件、上传器抽象与失败回退思路。
+- [yaleiyale/obsidian-emo-uploader](https://github.com/yaleiyale/obsidian-emo-uploader) — GitHub Contents API、多图床配置与 CDN 链接组织方式。
+- [renmu123/obsidian-image-auto-upload-plugin](https://github.com/renmu123/obsidian-image-auto-upload-plugin) — 粘贴占位、拖放上传与图床工作流。
+
+其中，`obsidian-image-auto-upload-plugin` 是 `obsidian-imgur-plugin` 的 fork；感谢两边作者持续演进这条插件路线。
+
+### 参考项目所致谢的上游与生态
+
+- [jordanhandy/obsidian-cloudinary-uploader](https://github.com/jordanhandy/obsidian-cloudinary-uploader) — 被 Emo Uploader 明确列为 Cloudinary 实现资料。
+- [PicGo](https://github.com/Molunerfinn/PicGo) 与 [PicGo-Core](https://github.com/PicGo/PicGo-Core) — Image Auto Upload Plugin 的核心图床生态与文档来源。
+- [GitHub REST API](https://docs.github.com/rest) 与 [jsDelivr](https://www.jsdelivr.com/) — Emo Uploader 致谢并采用的上传/CDN 基础设施。
+- [AList](https://github.com/AlistGo/alist)、[EasyImages2.0](https://github.com/icret/EasyImages2.0)、[Chevereto](https://github.com/chevereto/chevereto) — Emo Uploader 支持并在文档中致谢的自托管图床生态。
+- [Cloudinary](https://cloudinary.com/)、[SM.MS](https://smms.app/)、[ImgURL](https://www.imgurl.org/)、[Imgur](https://imgur.com/)、[imgbb](https://imgbb.com/) 与 [Catbox](https://catbox.moe/) — 上述参考项目覆盖和记录的托管服务。
+- 感谢 Emo Uploader 文档中点名的贡献者 [anxinJ](https://github.com/anxinJ) 与 [Linnnkkk](https://github.com/Linnnkkk)。
+
+感谢 [Obsidian](https://obsidian.md/) 提供插件 API，也感谢所有维护者公开代码与文档。
+
+## License
+
+[MIT](./LICENSE) © 2026 曾胤岑

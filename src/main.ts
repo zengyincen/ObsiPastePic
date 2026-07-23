@@ -88,7 +88,7 @@ export default class ImageBedUploaderPlugin extends Plugin {
         placeholder,
         `<!-- 图片上传失败：${escapeMarkdownAlt(file.name || "image")}；${safeError} -->`,
       );
-      console.error("Image Bed Uploader upload failed", result.reason);
+      console.error("ObsiPastePic upload failed", result.reason);
     });
 
     if (failed === 0) {

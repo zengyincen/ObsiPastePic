@@ -1,0 +1,73 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hero-bg" x1="92" y1="60" x2="1512" y2="852" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07162C"/>
+      <stop offset="0.48" stop-color="#0B2550"/>
+      <stop offset="1" stop-color="#24164A"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="180" y1="144" x2="760" y2="750" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.07"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="282" y1="238" x2="630" y2="642" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#64D2FF"/>
+      <stop offset="0.48" stop-color="#0A84FF"/>
+      <stop offset="1" stop-color="#BF5AF2"/>
+    </linearGradient>
+    <linearGradient id="photo" x1="336" y1="472" x2="610" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#64D2FF"/>
+      <stop offset="1" stop-color="#5E5CE6"/>
+    </linearGradient>
+    <filter id="blur-a" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="96"/>
+    </filter>
+    <filter id="card-shadow" x="-30%" y="-30%" width="170%" height="180%">
+      <feDropShadow dx="0" dy="34" stdDeviation="44" flood-color="#00091B" flood-opacity="0.46"/>
+    </filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#35A7FF" flood-opacity="0.44"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="54" fill="url(#hero-bg)"/>
+  <circle cx="270" cy="160" r="250" fill="#2CB9FF" fill-opacity="0.2" filter="url(#blur-a)"/>
+  <circle cx="1380" cy="792" r="286" fill="#9B45FF" fill-opacity="0.2" filter="url(#blur-a)"/>
+  <circle cx="1208" cy="108" r="152" fill="#0A84FF" fill-opacity="0.12" filter="url(#blur-a)"/>
+
+  <g filter="url(#card-shadow)">
+    <rect x="136" y="116" width="632" height="668" rx="92" fill="url(#glass)"/>
+    <rect x="138" y="118" width="628" height="664" rx="90" stroke="white" stroke-opacity="0.2" stroke-width="3"/>
+  </g>
+
+  <rect x="246" y="190" width="412" height="518" rx="76" fill="white" fill-opacity="0.94"/>
+  <rect x="380" y="168" width="144" height="56" rx="28" fill="#EEF5FF"/>
+  <rect x="412" y="187" width="80" height="18" rx="9" fill="#B6C9E6"/>
+
+  <g filter="url(#glow)">
+    <path d="M452 272V430" stroke="url(#accent)" stroke-width="48" stroke-linecap="round"/>
+    <path d="M374 368L452 446L530 368" stroke="url(#accent)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <rect x="314" y="444" width="276" height="192" rx="42" fill="url(#photo)"/>
+  <circle cx="530" cy="498" r="28" fill="#FFD60A"/>
+  <path d="M336 604L402 524L460 582L496 542L568 614H336V604Z" fill="white" fill-opacity="0.9"/>
+
+  <path d="M714 360C806 360 798 282 882 282" stroke="#55C8FF" stroke-opacity="0.76" stroke-width="5" stroke-linecap="round" stroke-dasharray="13 18"/>
+  <path d="M714 484C820 484 812 484 896 484" stroke="#6E89FF" stroke-opacity="0.72" stroke-width="5" stroke-linecap="round" stroke-dasharray="13 18"/>
+  <path d="M714 604C812 604 812 674 896 674" stroke="#B86AF5" stroke-opacity="0.68" stroke-width="5" stroke-linecap="round" stroke-dasharray="13 18"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="866" y="236" fill="white" font-size="28" font-weight="650" letter-spacing="4">OBSIDIAN IMAGE WORKFLOW</text>
+    <text x="860" y="348" fill="white" font-size="92" font-weight="730" letter-spacing="-4">Paste.</text>
+    <text x="860" y="448" fill="#71D7FF" font-size="92" font-weight="730" letter-spacing="-4">Upload.</text>
+    <text x="860" y="548" fill="#B990FF" font-size="92" font-weight="730" letter-spacing="-4">Done.</text>
+    <text x="868" y="622" fill="#C9D6EB" font-size="29" font-weight="430">GitHub or your image host.</text>
+    <text x="868" y="663" fill="#C9D6EB" font-size="29" font-weight="430">Your CDN. Your path. Your notes.</text>
+
+    <rect x="862" y="714" width="438" height="74" rx="37" fill="white" fill-opacity="0.1" stroke="white" stroke-opacity="0.16"/>
+    <circle cx="910" cy="751" r="16" fill="#30D158"/>
+    <text x="944" y="761" fill="white" font-size="26" font-weight="590">ObsiPastePic is ready.</text>
+  </g>
+
+  <rect x="1.5" y="1.5" width="1597" height="897" rx="52.5" stroke="white" stroke-opacity="0.13" stroke-width="3"/>
+</svg>

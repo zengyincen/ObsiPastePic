@@ -1,9 +1,9 @@
 {
   "id": "image-bed-uploader",
-  "name": "Image Bed Uploader",
+  "name": "ObsiPastePic",
   "version": "0.1.0",
   "minAppVersion": "1.4.0",
-  "description": "Upload pasted images to GitHub or a custom image hosting API and insert customizable CDN links.",
+  "description": "Paste images, upload to GitHub or your image host, and insert customizable CDN links.",
   "author": "曾胤岑",
   "authorUrl": "https://github.com/zengyincen",
   "isDesktopOnly": false

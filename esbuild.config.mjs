@@ -5,7 +5,7 @@ import builtins from "builtin-modules";
 const production = process.argv[2] === "production";
 
 const context = await esbuild.context({
-  banner: { js: "/* Image Bed Uploader */" },
+  banner: { js: "/* ObsiPastePic */" },
   entryPoints: ["src/main.ts"],
   bundle: true,
   external: ["obsidian", "electron", ...builtins],

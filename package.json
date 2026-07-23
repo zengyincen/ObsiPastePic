@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-image-bed-uploader",
+  "name": "obsidian-obsipastepic",
   "version": "0.1.0",
-  "description": "Upload pasted images to GitHub or a custom image hosting API and insert accelerated CDN links.",
+  "description": "ObsiPastePic uploads pasted images from Obsidian to GitHub or a custom image host and inserts accelerated CDN links.",
   "main": "main.js",
   "type": "module",
   "scripts": {

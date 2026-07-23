@@ -1,0 +1,61 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="app-bg" x1="126" y1="72" x2="884" y2="952" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#72D4FF"/>
+      <stop offset="0.42" stop-color="#0A84FF"/>
+      <stop offset="1" stop-color="#5E5CE6"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="512" y1="188" x2="512" y2="832" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#E8F1FF" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="photo" x1="340" y1="478" x2="684" y2="744" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#64D2FF"/>
+      <stop offset="0.5" stop-color="#0A84FF"/>
+      <stop offset="1" stop-color="#5856D6"/>
+    </linearGradient>
+    <linearGradient id="arrow" x1="512" y1="254" x2="512" y2="544" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5AC8FA"/>
+      <stop offset="1" stop-color="#0A84FF"/>
+    </linearGradient>
+    <filter id="outer-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="32" stdDeviation="42" flood-color="#142A70" flood-opacity="0.34"/>
+    </filter>
+    <filter id="paper-shadow" x="-30%" y="-20%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#083A8C" flood-opacity="0.24"/>
+    </filter>
+    <filter id="arrow-shadow" x="-80%" y="-60%" width="260%" height="240%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0062CC" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#outer-shadow)">
+    <rect x="32" y="32" width="960" height="960" rx="224" fill="url(#app-bg)"/>
+    <rect x="45" y="45" width="934" height="934" rx="211" stroke="white" stroke-opacity="0.25" stroke-width="2"/>
+  </g>
+
+  <ellipse cx="238" cy="188" rx="224" ry="196" fill="white" fill-opacity="0.13"/>
+  <ellipse cx="830" cy="836" rx="300" ry="264" fill="#844DFF" fill-opacity="0.2"/>
+
+  <g filter="url(#paper-shadow)">
+    <rect x="248" y="188" width="528" height="648" rx="96" fill="url(#paper)"/>
+    <rect x="261" y="201" width="502" height="622" rx="83" stroke="white" stroke-opacity="0.72" stroke-width="3"/>
+  </g>
+
+  <rect x="410" y="162" width="204" height="70" rx="35" fill="#F5F9FF"/>
+  <rect x="438" y="183" width="148" height="28" rx="14" fill="#C7D7EF"/>
+
+  <g filter="url(#arrow-shadow)">
+    <path d="M512 266V492" stroke="url(#arrow)" stroke-width="58" stroke-linecap="round"/>
+    <path d="M414 414L512 512L610 414" stroke="url(#arrow)" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <rect x="326" y="488" width="372" height="260" rx="54" fill="url(#photo)"/>
+  <circle cx="606" cy="566" r="38" fill="#FFF6CC"/>
+  <path d="M354 701L448 594L520 670L568 616L674 721H354V701Z" fill="white" fill-opacity="0.9"/>
+  <path d="M354 718L448 611L520 687L568 633L654 718H354Z" fill="#EAF6FF" fill-opacity="0.62"/>
+  <rect x="326" y="488" width="372" height="260" rx="54" stroke="white" stroke-opacity="0.62" stroke-width="4"/>
+
+  <path d="M206 324C170 402 160 491 178 576" stroke="white" stroke-opacity="0.18" stroke-width="18" stroke-linecap="round"/>
+  <path d="M818 680C854 620 868 550 858 484" stroke="white" stroke-opacity="0.16" stroke-width="18" stroke-linecap="round"/>
+</svg>
