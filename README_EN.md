@@ -11,12 +11,12 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/zengyincen/ObsiPastePic/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/zengyincen/ObsiPastePic?display_name=tag&sort=semver&style=flat-square&color=0A84FF" /></a>
-  <a href="https://github.com/zengyincen/ObsiPastePic/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/zengyincen/ObsiPastePic/total?style=flat-square&color=5E5CE6" /></a>
-  <a href="https://github.com/zengyincen/ObsiPastePic/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/zengyincen/ObsiPastePic?style=flat-square&color=FFB340" /></a>
-  <a href="https://github.com/zengyincen/ObsiPastePic/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/zengyincen/ObsiPastePic?style=flat-square&color=30D158" /></a>
-  <a href="https://github.com/zengyincen/ObsiPastePic/issues"><img alt="Issues" src="https://img.shields.io/github/issues/zengyincen/ObsiPastePic?style=flat-square&color=FF9F0A" /></a>
-  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/github/license/zengyincen/ObsiPastePic?style=flat-square&color=8E8E93" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/zengyincen/Obsidian-PastePic?display_name=tag&sort=semver&style=flat-square&color=0A84FF" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/zengyincen/Obsidian-PastePic/total?style=flat-square&color=5E5CE6" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/zengyincen/Obsidian-PastePic?style=flat-square&color=FFB340" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/zengyincen/Obsidian-PastePic?style=flat-square&color=30D158" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/issues"><img alt="Issues" src="https://img.shields.io/github/issues/zengyincen/Obsidian-PastePic?style=flat-square&color=FF9F0A" /></a>
+  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/github/license/zengyincen/Obsidian-PastePic?style=flat-square&color=8E8E93" /></a>
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/zengyincen/ObsiPastePic/releases/latest"><strong>Download</strong></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases/latest"><strong>Download</strong></a>
   ·
   <a href="#github-setup-in-30-seconds"><strong>Quick start</strong></a>
   ·
@@ -60,7 +60,7 @@ ObsiPastePic does one thing well: **it catches an image that is pasted, dropped,
 
 ### Install from a Release
 
-1. Open the [latest Release](https://github.com/zengyincen/ObsiPastePic/releases/latest).
+1. Open the [latest Release](https://github.com/zengyincen/Obsidian-PastePic/releases/latest).
 2. Download `obsipastepic-*.zip`.
 3. Extract it to:
 
@@ -73,12 +73,12 @@ ObsiPastePic does one thing well: **it catches an image that is pasted, dropped,
 
 > ObsiPastePic has not yet been submitted to the official Obsidian community-plugin directory. GitHub Releases are currently the canonical distribution channel.
 
-> The community-directory display name is **PastePic**. The project brand, GitHub repository, and plugin ID remain **ObsiPastePic** / `obsipastepic` to preserve existing installations and settings.
+> The community-directory display name is **PastePic**. The project brand and plugin ID remain **ObsiPastePic** / `obsipastepic` to preserve existing installations and settings.
 
 ### Build from source
 
 ```bash
-git clone https://github.com/zengyincen/ObsiPastePic.git
+git clone https://github.com/zengyincen/Obsidian-PastePic.git
 cd ObsiPastePic
 npm install
 npm test

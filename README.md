@@ -4,12 +4,12 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/zengyincen/ObsiPastePic/releases/latest"><img alt="最新版本" src="https://img.shields.io/github/v/release/zengyincen/ObsiPastePic?display_name=tag&sort=semver&style=flat-square&color=0A84FF" /></a>
-  <a href="https://github.com/zengyincen/ObsiPastePic/releases"><img alt="下载量" src="https://img.shields.io/github/downloads/zengyincen/ObsiPastePic/total?style=flat-square&color=5E5CE6" /></a>
-  <a href="https://github.com/zengyincen/ObsiPastePic/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/zengyincen/ObsiPastePic?style=flat-square&color=FFB340" /></a>
-  <a href="https://github.com/zengyincen/ObsiPastePic/commits/main"><img alt="最后提交" src="https://img.shields.io/github/last-commit/zengyincen/ObsiPastePic?style=flat-square&color=30D158" /></a>
-  <a href="https://github.com/zengyincen/ObsiPastePic/issues"><img alt="Issues" src="https://img.shields.io/github/issues/zengyincen/ObsiPastePic?style=flat-square&color=FF9F0A" /></a>
-  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/github/license/zengyincen/ObsiPastePic?style=flat-square&color=8E8E93" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases/latest"><img alt="最新版本" src="https://img.shields.io/github/v/release/zengyincen/Obsidian-PastePic?display_name=tag&sort=semver&style=flat-square&color=0A84FF" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases"><img alt="下载量" src="https://img.shields.io/github/downloads/zengyincen/Obsidian-PastePic/total?style=flat-square&color=5E5CE6" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/zengyincen/Obsidian-PastePic?style=flat-square&color=FFB340" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/commits/main"><img alt="最后提交" src="https://img.shields.io/github/last-commit/zengyincen/Obsidian-PastePic?style=flat-square&color=30D158" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/issues"><img alt="Issues" src="https://img.shields.io/github/issues/zengyincen/Obsidian-PastePic?style=flat-square&color=FF9F0A" /></a>
+  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/github/license/zengyincen/Obsidian-PastePic?style=flat-square&color=8E8E93" /></a>
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/zengyincen/ObsiPastePic/releases/latest"><strong>下载最新版本</strong></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases/latest"><strong>下载最新版本</strong></a>
   ·
   <a href="#30-秒配置-github"><strong>快速开始</strong></a>
   ·
@@ -60,7 +60,7 @@ ObsiPastePic 只做一件事：**接住你粘贴、拖入或由 Obsidian 新插�
 
 ### 从 Release 安装
 
-1. 打开 [Latest Release](https://github.com/zengyincen/ObsiPastePic/releases/latest)。
+1. 打开 [Latest Release](https://github.com/zengyincen/Obsidian-PastePic/releases/latest)。
 2. 下载 `obsipastepic-*.zip`。
 3. 解压到你的 Obsidian 仓库：
 
@@ -73,12 +73,12 @@ ObsiPastePic 只做一件事：**接住你粘贴、拖入或由 Obsidian 新插�
 
 > 当前尚未提交到 Obsidian 官方社区插件列表，因此请以 GitHub Release 为准。
 
-> 社区插件目录显示名称为 **PastePic**。项目品牌、GitHub 仓库与插件 ID 继续使用 **ObsiPastePic** / `obsipastepic`，以保持现有安装和设置兼容。
+> 社区插件目录显示名称为 **PastePic**。项目品牌与插件 ID 继续使用 **ObsiPastePic** / `obsipastepic`，以保持现有安装和设置兼容。
 
 ### 从源码构建
 
 ```bash
-git clone https://github.com/zengyincen/ObsiPastePic.git
+git clone https://github.com/zengyincen/Obsidian-PastePic.git
 cd ObsiPastePic
 npm install
 npm test
