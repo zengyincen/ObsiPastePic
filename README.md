@@ -1,84 +1,81 @@
+<p align="right">
+  <a href="./README_ZH.md">简体中文</a> · <strong>English</strong>
+</p>
 
 <p align="center">
   <img src="./assets/icon.svg" alt="ObsiPastePic App Icon" width="128" height="128" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases/latest"><img alt="最新版本" src="https://img.shields.io/github/v/release/zengyincen/Obsidian-PastePic?display_name=tag&sort=semver&style=flat-square&color=0A84FF" /></a>
-  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases"><img alt="下载量" src="https://img.shields.io/github/downloads/zengyincen/Obsidian-PastePic/total?style=flat-square&color=5E5CE6" /></a>
+  <img src="./assets/banner.svg" alt="ObsiPastePic Banner" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/zengyincen/Obsidian-PastePic?display_name=tag&sort=semver&style=flat-square&color=0A84FF" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/zengyincen/Obsidian-PastePic/total?style=flat-square&color=5E5CE6" /></a>
   <a href="https://github.com/zengyincen/Obsidian-PastePic/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/zengyincen/Obsidian-PastePic?style=flat-square&color=FFB340" /></a>
-  <a href="https://github.com/zengyincen/Obsidian-PastePic/commits/main"><img alt="最后提交" src="https://img.shields.io/github/last-commit/zengyincen/Obsidian-PastePic?style=flat-square&color=30D158" /></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/zengyincen/Obsidian-PastePic?style=flat-square&color=30D158" /></a>
   <a href="https://github.com/zengyincen/Obsidian-PastePic/issues"><img alt="Issues" src="https://img.shields.io/github/issues/zengyincen/Obsidian-PastePic?style=flat-square&color=FF9F0A" /></a>
   <a href="./LICENSE"><img alt="License" src="https://img.shields.io/github/license/zengyincen/Obsidian-PastePic?style=flat-square&color=8E8E93" /></a>
 </p>
 
 <p align="center">
-  <strong>粘贴一次，自动上传，立即引用。</strong><br />
-  ObsiPastePic 把粘贴到 Obsidian 的图片上传到 GitHub 仓库或你的图床，并写入可自定义的 CDN / 代理链接。
+  <strong>Paste once. Upload automatically. Link instantly.</strong><br />
+  ObsiPastePic uploads images pasted into Obsidian to GitHub or your image host, then inserts a customizable CDN or proxy URL.
 </p>
 
 <p align="center">
-  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases/latest"><strong>下载最新版本</strong></a>
+  <a href="https://github.com/zengyincen/Obsidian-PastePic/releases/latest"><strong>Download</strong></a>
   ·
-  <a href="#30-秒配置-github"><strong>快速开始</strong></a>
+  <a href="#github-setup-in-30-seconds"><strong>Quick start</strong></a>
   ·
-  <a href="#cdn--代理基础路径"><strong>CDN 路径</strong></a>
-  ·
-  <ins><strong>简体中文</strong></ins> · <a href="./README_EN.md"><strong>English</strong></a>
+  <a href="#cdn--proxy-base-directory"><strong>CDN path</strong></a>
 </p>
-
-<p align="center">
-  <img src="./assets/banner.svg" alt="ObsiPastePic Banner" width="100%" />
-</p>
-
-## English overview
-
-PastePic automatically uploads images pasted, dropped, or inserted into Obsidian notes. It supports GitHub repositories and generic multipart image-host APIs, then replaces local attachments with standard Markdown image links. You can configure a CDN or proxy base directory, choose filename strategies, and use the settings page in eight languages. See the [complete English documentation](./README_EN.md) for setup, security guidance, and usage details.
-
-## 为什么是 ObsiPastePic？
-
-截图、网页图片和设计稿经常让 Obsidian 仓库迅速膨胀。手动打开图床、上传、复制链接、再返回笔记，又会打断写作节奏。
 
 <p align="center">
   <img src="./assets/hero.svg" alt="ObsiPastePic — Paste. Upload. Done." width="100%" />
 </p>
 
-ObsiPastePic 只做一件事：**接住你粘贴、拖入或由 Obsidian 新插入的本地图片，上传，然后在原位置放回远程 Markdown 图片链接。** 上传过程有独立占位符；失败时恢复本地图片链接，不会留下无效的错误链接。
+## Why ObsiPastePic?
 
-## 功能一览
+Screenshots, web images, and design exports can make an Obsidian vault grow quickly. Manually opening an image host, uploading, copying a URL, and returning to the note also breaks the writing flow.
 
-| 能力 | 说明 |
+ObsiPastePic does one thing well: **it catches an image that is pasted, dropped, or newly inserted as a local Obsidian link, uploads it, and puts the remote Markdown image link back in the same place.** Every upload gets a unique placeholder. A failed upload restores the local image link instead of leaving a broken error link.
+
+## Features
+
+| Capability | Details |
 | --- | --- |
-| 自动粘贴上传 | 支持一次粘贴多张图片，并在各自占位位置异步替换链接 |
-| 拖放上传 | 可选择在图片拖入 Markdown 编辑器时自动上传 |
-| 插入图片检测 | 自动识别 Obsidian 或其他插件新插入的本地图片链接并上传 |
-| GitHub 图床 | 使用 GitHub Contents API，支持日期目录、分支和提交信息模板 |
-| 通用图床 API | 支持 `POST multipart/form-data`、自定义请求头、文件字段和附加字段 |
-| CDN / 代理加速 | 只填写图片目录基础路径，插件自动追加图片名和后缀 |
-| 多语言设置 | 设置页支持简体中文、英语、日语、韩语、意大利语、西班牙语、德语和法语 |
-| 安全的原生回退 | 没有图片、混入非图片文件或配置缺失时，不接管 Obsidian 原生行为 |
-| 桌面与移动端 | 不依赖本地可执行文件，插件清单未限制为桌面端 |
+| Automatic paste upload | Paste multiple images and replace each independent placeholder asynchronously |
+| Drag-and-drop upload | Optionally upload images dropped into the Markdown editor |
+| Inserted-image detection | Upload local image links newly inserted by Obsidian or another plugin |
+| GitHub image hosting | GitHub Contents API with branches, date paths, and commit-message templates |
+| Generic image-host API | `POST multipart/form-data` with custom headers, file field, and extra form fields |
+| CDN / proxy acceleration | Enter an image-directory base URL; the plugin appends the filename and extension |
+| Multilingual settings | Simplified Chinese, English, Japanese, Korean, Italian, Spanish, German, and French |
+| Native fallback | Leaves Obsidian untouched when there is no image, mixed file types, or missing configuration |
+| Desktop and mobile | No local executable dependency and no desktop-only manifest restriction |
 
-## 安装
+## Installation
 
-### 从 Release 安装
+### Install from a Release
 
-1. 打开 [Latest Release](https://github.com/zengyincen/Obsidian-PastePic/releases/latest)。
-2. 下载 `main.js`、`manifest.json` 和 `styles.css`。
-3. 在你的 Obsidian 仓库中创建插件目录：
+1. Open the [latest Release](https://github.com/zengyincen/Obsidian-PastePic/releases/latest).
+2. Download `main.js`, `manifest.json`, and `styles.css`.
+3. Create the plugin directory in your vault:
 
    ```text
-   <你的仓库>/.obsidian/plugins/obsipastepic/
+   <your-vault>/.obsidian/plugins/obsipastepic/
    ```
 
-4. 把下载的三个文件放入该目录。彩色图标已经内嵌在 `main.js` 中，不需要额外素材文件。
-5. 重启 Obsidian，在「设置 → 第三方插件」中启用 **PastePic**。
+4. Put the three downloaded files in that directory. The color icon is bundled into `main.js`, so no additional asset file is required.
+5. Restart Obsidian and enable **PastePic** under Settings → Community plugins.
 
-> 插件正在通过 Obsidian 官方社区目录审核；如果暂时无法在社区插件中搜索到，请使用 GitHub Release 安装。
+> ObsiPastePic is currently going through the official Obsidian community-directory review. If it is not searchable there yet, install it from GitHub Releases.
 
-> 社区插件目录显示名称为 **PastePic**。项目品牌与插件 ID 继续使用 **ObsiPastePic** / `obsipastepic`，以保持现有安装和设置兼容。
+> The community-directory display name is **PastePic**. The project brand and plugin ID remain **ObsiPastePic** / `obsipastepic` to preserve existing installations and settings.
 
-### 从源码构建
+### Build from source
 
 ```bash
 git clone https://github.com/zengyincen/Obsidian-PastePic.git
@@ -88,123 +85,129 @@ npm test
 npm run build
 ```
 
-## 30 秒配置 GitHub
+## GitHub setup in 30 seconds
 
-1. 创建或选择一个用于存图的 GitHub 仓库。公开仓库更适合直接配合公共 CDN。
-2. 创建 **Fine-grained personal access token**：
-   - Repository access：只选择图床仓库；
-   - Repository permissions → Contents：选择 **Read and write**；
-   - 不授予无关权限。
-3. 打开 ObsiPastePic 设置，选择「GitHub 仓库」。
-4. 填写仓库所有者、仓库名、分支和 Token。
-5. 点击「测试 GitHub 配置」，再粘贴一张图片。
+1. Create or select a GitHub repository for your images. A public repository works best with public CDNs.
+2. Create a **fine-grained personal access token**:
+   - Limit repository access to the image repository;
+   - Set Repository permissions → Contents to **Read and write**;
+   - Grant no unrelated permissions.
+3. Open ObsiPastePic settings and choose “GitHub repository.”
+4. Enter the owner, repository, branch, and token.
+5. Run “Test GitHub configuration,” then paste an image.
 
-### 路径与文件名
+### Paths and filenames
 
-仓库内路径默认为空，图片会直接上传到仓库根目录。也可填写 `images` 等固定目录；使用自定义 CDN 时，让基础路径指向同一目录即可。
+The repository path is empty by default, so images are uploaded to the repository root. You can instead enter a fixed directory such as `images`; when using a custom CDN, point its base URL to the same directory.
 
-设置页语言默认为简体中文，可随时切换为英语、日语、韩语、意大利语、西班牙语、德语或法语。
+The settings page defaults to Simplified Chinese and can be switched to English, Japanese, Korean, Italian, Spanish, German, or French at any time.
 
-文件命名支持：
+Filename strategies:
 
-- 时间戳 + 原文件名（默认，最不容易冲突）；
-- 仅时间戳；
-- 保留原文件名。
+- Timestamp + original filename — default and least likely to collide;
+- Timestamp only;
+- Original filename.
 
-提交信息还可使用 `{filename}` 和 `{path}`。
+Commit messages can also use `{filename}` and `{path}`.
 
-## CDN / 代理基础路径
+## CDN / proxy base directory
 
-这里不再使用模板变量。用户只需填写到**图片所在目录**，ObsiPastePic 会自动追加上传后的图片名和后缀。
+There are no template variables. Enter the URL of the **final image directory** and ObsiPastePic appends the uploaded filename and extension automatically.
 
-例如仓库内路径为 `images`，上传后的文件名是 `1730000000-note.png`：
+For a repository directory named `images` and an uploaded filename `1730000000-note.png`:
 
-| 场景 | 设置中填写的基础路径 | 最终生成链接 |
+| Use case | Base directory in settings | Final URL |
 | --- | --- | --- |
-| GitHub Raw | 留空 | 自动生成完整 Raw 链接 |
-| jsDelivr | `https://cdn.jsdelivr.net/gh/zengyincen/image-bed@main/` | `…/1730000000-note.png` |
-| Statically | `https://cdn.statically.io/gh/zengyincen/image-bed/main/` | `…/1730000000-note.png` |
-| 自建代理/CDN | `https://cdn.example.com/xx/xx/` | `https://cdn.example.com/xx/xx/1730000000-note.png` |
+| GitHub Raw | Leave empty | A complete Raw URL is generated automatically |
+| jsDelivr | `https://cdn.jsdelivr.net/gh/zengyincen/image-bed@main/images/` | `…/images/1730000000-note.png` |
+| Statically | `https://cdn.statically.io/gh/zengyincen/image-bed/main/images/` | `…/images/1730000000-note.png` |
+| Custom proxy/CDN | `https://cdn.example.com/xx/xx/` | `https://cdn.example.com/xx/xx/1730000000-note.png` |
 
-设置页会显示完整链接预览。自定义路径应与 GitHub 的“仓库内路径”指向同一目录。
+The settings screen displays the complete URL preview. A custom base must point to the same directory as “Repository path.”
 
-> 私有 GitHub 仓库的 Raw/CDN 链接通常无法匿名读取。上传可以成功，但图片不一定能显示；请使用能够为私有仓库鉴权的自建代理，或改用公开图床仓库。
+> Raw and public CDN links generally cannot read private GitHub repositories anonymously. Uploads may succeed while images remain unavailable. Use an authenticated proxy or a public image repository.
 
-## 自定义图床 API
+## Custom image-host API
 
-自定义模式会通过 `POST multipart/form-data` 发送图片：
+Custom mode sends images as `POST multipart/form-data`:
 
 ```http
 POST /upload
 Content-Type: multipart/form-data
 
-file=<图片二进制>
+file=<image bytes>
 album=obsidian
 ```
 
-| 设置 | 示例 |
+| Setting | Example |
 | --- | --- |
-| 上传接口 | `https://img.example.com/upload` |
-| 文件字段名 | `file`、`image` 或 `source` |
-| 请求头 JSON | `{"Authorization":"Bearer token"}` |
-| 附加字段 JSON | `{"album":"obsidian"}` |
-| 响应链接路径 | `data.url` 或 `data.images[0].url` |
-| CDN / 代理基础路径 | `https://cdn.example.com/xx/xx/`；留空使用图床返回链接 |
+| Endpoint | `https://img.example.com/upload` |
+| File field | `file`, `image`, or `source` |
+| Header JSON | `{"Authorization":"Bearer token"}` |
+| Extra field JSON | `{"album":"obsidian"}` |
+| Response URL path | `data.url` or `data.images[0].url` |
+| CDN / proxy base directory | `https://cdn.example.com/xx/xx/`; leave empty to use the host response URL |
 
-插件不适配需要专用签名算法、分块上传或浏览器交互登录的特殊接口；这类服务需要单独实现上传器。
+Services that require custom signatures, chunked uploads, or an interactive browser login need a dedicated uploader implementation.
 
-## 粘贴行为与失败处理
+## Paste behavior and failures
 
-- 剪贴板没有图片时，插件不干预 Obsidian。
-- 剪贴板文件不全是图片时，插件不接管，避免丢失附件。
-- 配置缺失时保留 Obsidian 原生粘贴行为。
-- 上传开始后插入唯一占位符，成功后替换为标准 `![文件名](远程地址)`，链接两侧不会出现 `< >`。
-- 上传失败时恢复本地图片链接，不再生成 `[Github upload error]()` 或 HTML 错误注释。
-- 已存在的旧式 `[Github upload error]()` 标记会在编辑器变更时自动清理。
-- 可决定剪贴板同时含图片与文字时是否仍上传图片。
+- The plugin does nothing when the clipboard contains no image.
+- It does not intercept a mixed list of image and non-image files.
+- Missing configuration preserves Obsidian's native paste behavior.
+- Uploads start with a unique placeholder and finish as standard `![filename](remote-url)` Markdown, without `< >` around the URL.
+- Failed uploads restore the local image link instead of creating `[Github upload error]()` or an HTML error comment.
+- Existing legacy `[Github upload error]()` markers are removed automatically on editor changes.
+- A setting controls whether images are uploaded when clipboard text is present too.
 
-## 安全说明
+## Security
 
-- GitHub Token 会明文保存在插件目录的 `data.json` 中；请务必使用**单仓库、最小权限、可随时撤销**的 Token。
-- 不要在截图、Issue、日志或公开笔记中暴露 Token 和自定义图床请求头。
-- GitHub 与公共 CDN 都有服务条款和流量限制。个人笔记图片通常没有问题，但不应把它们当作无限制对象存储。
+- The GitHub token is stored as plain text in the plugin's `data.json`. Use a **single-repository, least-privilege, revocable** token.
+- Never expose tokens or custom authorization headers in screenshots, Issues, logs, or public notes.
+- GitHub and public CDNs have terms and traffic limits. Normal personal-note images are usually fine; they are not unlimited object storage.
 
-## 开发与验证
+## Development and verification
 
 ```bash
-npm run typecheck   # TypeScript 类型检查
-npm test            # Vitest 单元测试
-npm run build       # 生成 main.js
+npm run typecheck   # TypeScript type checking
+npm test            # Vitest unit tests
+npm run build       # Build main.js
 ```
 
-当前测试覆盖基础路径拼接、无尖括号 Markdown、路径编码、文件命名、本地图片插入检测、旧错误标记清理、JSON 响应路径和配置迁移。
+Tests cover base-directory joining, angle-bracket-free Markdown, path encoding, file naming, local image insertion detection, legacy error-marker cleanup, JSON response paths, and settings migration.
 
-## 品牌素材
+## Brand assets
 
-| 素材 | 文件 | 用途 |
+| Asset | File | Intended use |
 | --- | --- | --- |
-| App Icon | [`assets/icon.svg`](./assets/icon.svg) | 头像、应用图标、小尺寸标识 |
-| Banner | [`assets/banner.svg`](./assets/banner.svg) | GitHub 头图、社交分享横幅 |
-| Hero | [`assets/hero.svg`](./assets/hero.svg) | README 与产品介绍主视觉 |
+| App Icon | [`assets/icon.svg`](./assets/icon.svg) | Avatar, app icon, compact identity |
+| Banner | [`assets/banner.svg`](./assets/banner.svg) | Repository header and social banner |
+| Hero | [`assets/hero.svg`](./assets/hero.svg) | README and product overview |
 
-视觉采用克制渐变、玻璃层次与大留白的现代系统设计语言；不包含 Apple 商标或官方素材。
+The visual system uses restrained gradients, layered glass, and generous spacing. It contains no Apple trademark or official Apple artwork.
 
-## 致谢
+## Acknowledgements
 
-ObsiPastePic 是独立实现的 MIT 开源项目。以下项目为事件处理、上传、GitHub 图床与用户体验提供了重要参考：
+ObsiPastePic is an independently implemented MIT-licensed project. The following projects provided valuable references for events, uploader abstractions, GitHub image hosting, and UX:
 
-- [gavvvr/obsidian-imgur-plugin](https://github.com/gavvvr/obsidian-imgur-plugin) — 图片粘贴事件、上传与失败回退思路。
-- [yaleiyale/obsidian-emo-uploader](https://github.com/yaleiyale/obsidian-emo-uploader) — GitHub Contents API、多图床配置与 CDN 链接组织方式。
-- [renmu123/obsidian-image-auto-upload-plugin](https://github.com/renmu123/obsidian-image-auto-upload-plugin) — 粘贴占位、拖放上传与图床工作流。
-- [jordanhandy/obsidian-cloudinary-uploader](https://github.com/jordanhandy/obsidian-cloudinary-uploader) — 被 Emo Uploader 明确列为 Cloudinary 实现资料。
-- [PicGo](https://github.com/Molunerfinn/PicGo) 与 [PicGo-Core](https://github.com/PicGo/PicGo-Core) — Image Auto Upload Plugin 的核心图床生态与文档来源。
-- [GitHub REST API](https://docs.github.com/rest) 与 [jsDelivr](https://www.jsdelivr.com/) — Emo Uploader 致谢并采用的上传/CDN 基础设施。
-- [AList](https://github.com/AlistGo/alist)、[EasyImages2.0](https://github.com/icret/EasyImages2.0)、[Chevereto](https://github.com/chevereto/chevereto) — Emo Uploader 支持并在文档中致谢的自托管图床生态。
-- [Cloudinary](https://cloudinary.com/)、[SM.MS](https://smms.app/)、[ImgURL](https://www.imgurl.org/)、[Imgur](https://imgur.com/)、[imgbb](https://imgbb.com/) 与 [Catbox](https://catbox.moe/) — 上述参考项目覆盖和记录的托管服务。
+### Direct references
 
-其中，`obsidian-image-auto-upload-plugin` 是 `obsidian-imgur-plugin` 的 fork；感谢两边作者持续演进这条插件路线。
+- [gavvvr/obsidian-imgur-plugin](https://github.com/gavvvr/obsidian-imgur-plugin) — image-paste events, uploader abstraction, and failure fallback.
+- [yaleiyale/obsidian-emo-uploader](https://github.com/yaleiyale/obsidian-emo-uploader) — GitHub Contents API, multi-host settings, and CDN URL organization.
+- [renmu123/obsidian-image-auto-upload-plugin](https://github.com/renmu123/obsidian-image-auto-upload-plugin) — paste placeholders, drag-and-drop uploads, and image-host workflows.
 
-感谢 [Obsidian](https://obsidian.md/) 提供插件 API，也感谢所有维护者公开代码与文档。
+`obsidian-image-auto-upload-plugin` is a fork of `obsidian-imgur-plugin`; thanks to both maintainers for advancing this plugin family.
+
+### Upstream projects and ecosystem credited by those references
+
+- [jordanhandy/obsidian-cloudinary-uploader](https://github.com/jordanhandy/obsidian-cloudinary-uploader) — explicitly credited by Emo Uploader as a Cloudinary reference.
+- [PicGo](https://github.com/Molunerfinn/PicGo) and [PicGo-Core](https://github.com/PicGo/PicGo-Core) — the image-host ecosystem and documentation used by Image Auto Upload Plugin.
+- [GitHub REST API](https://docs.github.com/rest) and [jsDelivr](https://www.jsdelivr.com/) — upload and CDN infrastructure credited by Emo Uploader.
+- [AList](https://github.com/AlistGo/alist), [EasyImages2.0](https://github.com/icret/EasyImages2.0), and [Chevereto](https://github.com/chevereto/chevereto) — self-hosted image ecosystems supported and credited by Emo Uploader.
+- [Cloudinary](https://cloudinary.com/), [SM.MS](https://smms.app/), [ImgURL](https://www.imgurl.org/), [Imgur](https://imgur.com/), [imgbb](https://imgbb.com/), and [Catbox](https://catbox.moe/) — hosting services documented by the reference projects.
+- Thanks also to [anxinJ](https://github.com/anxinJ) and [Linnnkkk](https://github.com/Linnnkkk), contributors explicitly named by Emo Uploader.
+
+Thank you to [Obsidian](https://obsidian.md/) for the plugin API, and to every maintainer who publishes code and documentation openly.
 
 ## License
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.6 — 2026-07-23
+
+- Make the complete English documentation the default `README.md` for the Obsidian community directory.
+- Move the complete Simplified Chinese documentation to `README_ZH.md` and add language-switch links.
+
 ## 0.4.5 — 2026-07-23
 
 - Adopt Obsidian 1.13's declarative settings API and searchable setting definitions.
