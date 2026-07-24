@@ -77,7 +77,7 @@
     <use href="#banner-brand-icon" x="116" y="72" width="336" height="336"/>
   </g>
 
-  <text x="526" y="225" fill="url(#word)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="102" font-weight="720" letter-spacing="-4">ObsiPastePic</text>
+  <text x="526" y="225" fill="url(#word)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="102" font-weight="720" letter-spacing="-4">Pastepic</text>
   <text x="532" y="294" fill="#52617B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="34" font-weight="480" letter-spacing="0.4">Paste once. Upload anywhere. Read faster.</text>
 
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="620">

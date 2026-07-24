@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.8 — 2026-07-24
+
+- Remove the Obsidian ribbon icon so Pastepic no longer appears in the left toolbar.
+- Standardize the user-facing plugin and project name as **Pastepic** while preserving the existing plugin ID and installation directory.
+
 ## 0.4.7 — 2026-07-23
 
 - Replace runtime `btoa` usage with an explicit RFC 4648 byte encoder required by the GitHub Contents API.

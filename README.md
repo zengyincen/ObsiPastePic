@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/icon.svg" alt="ObsiPastePic App Icon" width="128" height="128" />
+  <img src="./assets/icon.svg" alt="Pastepic App Icon" width="128" height="128" />
 </p>
 
 <p align="center">
@@ -13,7 +13,7 @@
 
 <p align="center">
   <strong>Paste once. Upload automatically. Link instantly.</strong><br />
-  ObsiPastePic uploads images pasted into Obsidian to GitHub or your image host, then inserts a customizable CDN or proxy URL.
+  Pastepic uploads images pasted into Obsidian to GitHub or your image host, then inserts a customizable CDN or proxy URL.
 </p>
 
 <p align="center">
@@ -29,18 +29,18 @@
 </p>
 
 <p align="center">
-  <img src="./assets/banner.svg" alt="ObsiPastePic Banner" width="100%" />
+  <img src="./assets/banner.svg" alt="Pastepic Banner" width="100%" />
 </p>
 
-## Why ObsiPastePic?
+## Why Pastepic?
 
 Screenshots, web images, and design exports can make an Obsidian vault grow quickly. Manually opening an image host, uploading, copying a URL, and returning to the note also breaks the writing flow.
 
 <p align="center">
-  <img src="./assets/hero.svg" alt="ObsiPastePic — Paste. Upload. Done." width="100%" />
+  <img src="./assets/hero.svg" alt="Pastepic — Paste. Upload. Done." width="100%" />
 </p>
 
-ObsiPastePic does one thing well: **it catches an image that is pasted, dropped, or newly inserted as a local Obsidian link, uploads it, and puts the remote Markdown image link back in the same place.** Every upload gets a unique placeholder. A failed upload restores the local image link instead of leaving a broken error link.
+Pastepic does one thing well: **it catches an image that is pasted, dropped, or newly inserted as a local Obsidian link, uploads it, and puts the remote Markdown image link back in the same place.** Every upload gets a unique placeholder. A failed upload restores the local image link instead of leaving a broken error link.
 
 ## Features
 
@@ -69,17 +69,17 @@ ObsiPastePic does one thing well: **it catches an image that is pasted, dropped,
    ```
 
 4. Put the three downloaded files in that directory. The color icon is bundled into `main.js`, so no additional asset file is required.
-5. Restart Obsidian and enable **PastePic** under Settings → Community plugins.
+5. Restart Obsidian and enable **Pastepic** under Settings → Community plugins.
 
-> ObsiPastePic is currently going through the official Obsidian community-directory review. If it is not searchable there yet, install it from GitHub Releases.
+> Pastepic is currently going through the official Obsidian community-directory review. If it is not searchable there yet, install it from GitHub Releases.
 
-> The community-directory display name is **PastePic**. The project brand and plugin ID remain **ObsiPastePic** / `obsipastepic` to preserve existing installations and settings.
+> The user-facing name is **Pastepic**. The plugin ID and installation directory remain `obsipastepic` to preserve existing installations and settings.
 
 ### Build from source
 
 ```bash
 git clone https://github.com/zengyincen/Obsidian-PastePic.git
-cd ObsiPastePic
+cd Obsidian-PastePic
 npm install
 npm test
 npm run build
@@ -92,7 +92,7 @@ npm run build
    - Limit repository access to the image repository;
    - Set Repository permissions → Contents to **Read and write**;
    - Grant no unrelated permissions.
-3. Open ObsiPastePic settings and choose “GitHub repository.”
+3. Open Pastepic settings and choose “GitHub repository.”
 4. Enter the owner, repository, branch, and token.
 5. Run “Test GitHub configuration,” then paste an image.
 
@@ -112,7 +112,7 @@ Commit messages can also use `{filename}` and `{path}`.
 
 ## CDN / proxy base directory
 
-There are no template variables. Enter the URL of the **final image directory** and ObsiPastePic appends the uploaded filename and extension automatically.
+There are no template variables. Enter the URL of the **final image directory** and Pastepic appends the uploaded filename and extension automatically.
 
 For a repository directory named `images` and an uploaded filename `1730000000-note.png`:
 
@@ -188,7 +188,7 @@ The visual system uses restrained gradients, layered glass, and generous spacing
 
 ## Acknowledgements
 
-ObsiPastePic is an independently implemented MIT-licensed project. The following projects provided valuable references for events, uploader abstractions, GitHub image hosting, and UX:
+Pastepic is an independently implemented MIT-licensed project. The following projects provided valuable references for events, uploader abstractions, GitHub image hosting, and UX:
 
 ### Direct references
 

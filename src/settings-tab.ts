@@ -6,14 +6,14 @@ import type {
   SettingDefinitionRender,
 } from "obsidian";
 import brandIconDataUrl from "../assets/icon.svg";
-import type ObsiPastePicPlugin from "./main";
+import type PastepicPlugin from "./main";
 import { isAppLanguage, LANGUAGE_OPTIONS, t } from "./i18n";
 import type { MessageKey } from "./i18n";
 import { githubHeaders, buildGitHubPublicUrl, validateGitHubSettings } from "./uploaders/github";
 import { validateCustomApiSettings } from "./uploaders/custom-api";
 
-export class ObsiPastePicSettingTab extends PluginSettingTab {
-  constructor(app: App, private readonly plugin: ObsiPastePicPlugin) {
+export class PastepicSettingTab extends PluginSettingTab {
+  constructor(app: App, private readonly plugin: PastepicPlugin) {
     super(app, plugin);
     this.icon = "image-up";
   }
@@ -41,15 +41,15 @@ export class ObsiPastePicSettingTab extends PluginSettingTab {
 
   private headerDefinition(): SettingDefinitionRender {
     return {
-      name: "ObsiPastePic",
+      name: "Pastepic",
       searchable: false,
       render: (setting) => {
-        setting.setName("ObsiPastePic").setHeading();
+        setting.setName("Pastepic").setHeading();
         setting.settingEl.addClass("obsipastepic-settings-header");
         const image = setting.settingEl.createEl("img", {
           attr: {
             src: brandIconDataUrl,
-            alt: "ObsiPastePic",
+            alt: "Pastepic",
           },
         });
         setting.settingEl.prepend(image);

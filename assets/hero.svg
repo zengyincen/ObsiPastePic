@@ -95,7 +95,7 @@
 
     <rect x="862" y="714" width="438" height="74" rx="37" fill="white" fill-opacity="0.1" stroke="white" stroke-opacity="0.16"/>
     <circle cx="910" cy="751" r="16" fill="#30D158"/>
-    <text x="944" y="761" fill="white" font-size="26" font-weight="590">ObsiPastePic is ready.</text>
+    <text x="944" y="761" fill="white" font-size="26" font-weight="590">Pastepic is ready.</text>
   </g>
 
   <rect x="1.5" y="1.5" width="1597" height="897" rx="52.5" stroke="white" stroke-opacity="0.13" stroke-width="3"/>

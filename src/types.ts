@@ -22,7 +22,7 @@ export interface CustomApiSettings {
   cdnBaseUrl: string;
 }
 
-export interface ObsiPastePicSettings {
+export interface PastepicSettings {
   language: AppLanguage;
   provider: UploadProvider;
   autoUpload: boolean;

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { DEFAULT_SETTINGS, mergeSettings } from "../src/settings";
-import type { ObsiPastePicSettings } from "../src/types";
+import type { PastepicSettings } from "../src/types";
 
 describe("settings migration", () => {
   it("defaults to Simplified Chinese and an empty repository path", () => {
@@ -45,7 +45,7 @@ describe("settings migration", () => {
         cdnBaseUrl: "",
         cdnTemplate: "{url}",
       },
-    } as unknown as Partial<ObsiPastePicSettings>;
+    } as unknown as Partial<PastepicSettings>;
     const merged = mergeSettings(legacySettings);
     expect(merged.github.cdnBaseUrl).toBe("");
     expect("cdnTemplate" in merged.github).toBe(false);

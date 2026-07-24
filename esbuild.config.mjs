@@ -5,7 +5,7 @@ import process from "node:process";
 const production = process.argv[2] === "production";
 
 const context = await esbuild.context({
-  banner: { js: "/* ObsiPastePic */" },
+  banner: { js: "/* Pastepic */" },
   entryPoints: ["src/main.ts"],
   bundle: true,
   external: ["obsidian", "electron", ...builtinModules],

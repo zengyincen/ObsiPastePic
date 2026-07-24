@@ -1,7 +1,7 @@
-import type { ObsiPastePicSettings } from "./types";
+import type { PastepicSettings } from "./types";
 import { isAppLanguage } from "./i18n";
 
-export const DEFAULT_SETTINGS: ObsiPastePicSettings = {
+export const DEFAULT_SETTINGS: PastepicSettings = {
   language: "zh-CN",
   provider: "github",
   autoUpload: true,
@@ -30,13 +30,13 @@ export const DEFAULT_SETTINGS: ObsiPastePicSettings = {
 };
 
 export function mergeSettings(
-  saved: Partial<ObsiPastePicSettings> | null | undefined,
-): ObsiPastePicSettings {
+  saved: Partial<PastepicSettings> | null | undefined,
+): PastepicSettings {
   type LegacyCdnSettings = { cdnTemplate?: string };
   const { cdnTemplate: legacyGitHubCdn, ...savedGitHub } = (saved?.github ?? {}) as
-    Partial<ObsiPastePicSettings["github"]> & LegacyCdnSettings;
+    Partial<PastepicSettings["github"]> & LegacyCdnSettings;
   const { cdnTemplate: legacyCustomCdn, ...savedCustom } = (saved?.custom ?? {}) as
-    Partial<ObsiPastePicSettings["custom"]> & LegacyCdnSettings;
+    Partial<PastepicSettings["custom"]> & LegacyCdnSettings;
   const github = {
     ...DEFAULT_SETTINGS.github,
     ...savedGitHub,

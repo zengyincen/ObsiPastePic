@@ -1,9 +1,8 @@
-import { addIcon, Editor, MarkdownView, Notice, Plugin, TFile } from "obsidian";
+import { Editor, MarkdownView, Notice, Plugin, TFile } from "obsidian";
 import type { MarkdownFileInfo } from "obsidian";
-import { OBSIPASTE_ICON_ID, OBSIPASTE_ICON_SVG } from "./icon";
 import { DEFAULT_SETTINGS, mergeSettings } from "./settings";
-import { ObsiPastePicSettingTab } from "./settings-tab";
-import type { ObsiPastePicSettings, ImageUploader } from "./types";
+import { PastepicSettingTab } from "./settings-tab";
+import type { PastepicSettings, ImageUploader } from "./types";
 import { createUploader } from "./uploaders";
 import {
   countReferenceSources,
@@ -21,21 +20,14 @@ interface PendingUpload {
   sourcePath: string;
 }
 
-interface SettingsController {
-  open(): void;
-  openTabById(id: string): void;
-}
-
-export default class ObsiPastePicPlugin extends Plugin {
-  settings: ObsiPastePicSettings = DEFAULT_SETTINGS;
+export default class PastepicPlugin extends Plugin {
+  settings: PastepicSettings = DEFAULT_SETTINGS;
   private readonly knownReferences = new WeakMap<Editor, Map<string, number>>();
   private readonly scanTimers = new WeakMap<Editor, number>();
 
   async onload(): Promise<void> {
-    this.settings = mergeSettings(await this.loadData() as Partial<ObsiPastePicSettings> | null);
-    addIcon(OBSIPASTE_ICON_ID, OBSIPASTE_ICON_SVG);
-    this.addRibbonIcon(OBSIPASTE_ICON_ID, "ObsiPastePic", () => this.openSettings());
-    this.addSettingTab(new ObsiPastePicSettingTab(this.app, this));
+    this.settings = mergeSettings(await this.loadData() as Partial<PastepicSettings> | null);
+    this.addSettingTab(new PastepicSettingTab(this.app, this));
 
     this.registerEvent(
       this.app.workspace.on("editor-paste", (event, editor, info) => {
@@ -90,16 +82,6 @@ export default class ObsiPastePicPlugin extends Plugin {
     await this.saveData(this.settings);
   }
 
-  private openSettings(): void {
-    const controller = (this.app as typeof this.app & { setting?: SettingsController }).setting;
-    if (!controller) {
-      new Notice("ObsiPastePic");
-      return;
-    }
-    controller.open();
-    controller.openTabById(this.manifest.id);
-  }
-
   private handleFiles(
     files: File[],
     editor: Editor,
@@ -149,7 +131,7 @@ export default class ObsiPastePicPlugin extends Plugin {
         try {
           fallback = await this.saveAsLocalAttachment(file, pending[index].sourcePath);
         } catch (fallbackError) {
-          console.error("ObsiPastePic local fallback failed", fallbackError);
+          console.error("Pastepic local fallback failed", fallbackError);
           fallback = "";
         }
       }
@@ -158,7 +140,7 @@ export default class ObsiPastePicPlugin extends Plugin {
         placeholder,
         fallback,
       );
-      console.error("ObsiPastePic upload failed", result.reason);
+      console.error("Pastepic upload failed", result.reason);
     }
 
     // Treat restored fallback links as already known so a failed upload does
